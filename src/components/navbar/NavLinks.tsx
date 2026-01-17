@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { HardHat, Users, BookOpen, GraduationCap, Building2, PhoneCall, Menu, X } from 'lucide-react';
-import GoogleTranslateButton from './GoogleTranslateButton';
 
 export const navItems = [
   { name: 'Home', icon: <HardHat className="w-5 h-5" />, path: '/' },
@@ -35,11 +34,6 @@ const NavLinks = () => {
             <span className="ml-2">{item.name}</span>
           </Link>
         ))}
-        <div className="hidden lg:block">
-          <div className="inline-flex items-center px-2 lg:px-3 py-2 text-sm font-medium rounded-md transition-colors text-gray-600 hover:text-blue-600 hover:bg-gray-50">
-            <GoogleTranslateButton />
-          </div>
-        </div>
       </div>
       <div className="md:hidden flex items-center">
         <button
@@ -70,9 +64,6 @@ const NavLinks = () => {
                 <span className="ml-3">{item.name}</span>
               </Link>
             ))}
-            <div className="flex items-center px-3 py-2 text-base font-medium rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-50">
-                <GoogleTranslateButton />
-            </div>
           </div>
         </div>
       )}
