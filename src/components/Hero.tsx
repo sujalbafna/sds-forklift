@@ -7,23 +7,23 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 pb-8 bg-white">
           <main className="mt-10">
-            <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
-              <div className="max-w-xl text-center lg:text-left mt-10 lg:mt-0">
-                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <div className="flex flex-row items-center justify-between gap-4 md:gap-8">
+              <div className="w-7/12 text-left">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-extrabold text-gray-900">
                   <span className="block">Professional Forklift</span>
                   <span className="block text-blue-600">Training & Certification</span>
                 </h1>
-                <p className="mt-5 text-lg text-gray-500 md:text-xl">
+                <p className="mt-3 text-xs sm:text-sm md:text-base lg:text-lg text-gray-500">
                   Elevate your career with industry-leading forklift operation training. NSDC certification programs designed for safety and success.
                 </p>
               </div>
               
-              <div className="relative">
-                <div className="absolute -inset-4 bg-blue-100 rounded-full blur-lg opacity-75 animate-pulse"></div>
+              <div className="relative w-5/12">
+                <div className="absolute -inset-2 bg-blue-100 rounded-full blur-lg opacity-75 animate-pulse"></div>
                 <img 
                   src="https://i.postimg.cc/dVPjdHHg/logo-for-SDS-Forklift-Training.jpg"
                   alt="SDS Forklift Training"
-                  className="relative w-full max-w-sm mx-auto lg:max-w-md object-contain rounded-lg transform hover:scale-105 transition-transform duration-300 shadow-lg"
+                  className="relative w-full object-contain rounded-lg transform hover:scale-105 transition-transform duration-300 shadow-lg"
                 />
               </div>
             </div>
