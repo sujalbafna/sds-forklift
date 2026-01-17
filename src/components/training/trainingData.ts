@@ -34,3 +34,18 @@ export const upcomingSchedule = [
     seatsLeft: 8
   }
 ];
+
+export const resources = [
+  {
+    title: 'Forklift Safety Manual',
+    size: '2.5MB PDF'
+  },
+  {
+    title: 'Operator Checklist',
+    size: '500KB PDF'
+  },
+  {
+    title: 'Program Brochure',
+    size: '1.2MB PDF'
+  }
+];

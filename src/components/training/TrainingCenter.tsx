@@ -1,6 +1,8 @@
 import React from 'react';
 import TrainingPrograms from './TrainingPrograms';
 import CertificationInfo from './CertificationInfo';
+import ResourceDownloads from './ResourceDownloads';
+import UpcomingSchedule from './UpcomingSchedule';
 
 const TrainingCenter = () => {
   return (
@@ -18,6 +20,11 @@ const TrainingCenter = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <TrainingPrograms />
           <CertificationInfo />
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+          <UpcomingSchedule />
+          <ResourceDownloads />
         </div>
       </div>
     </section>
