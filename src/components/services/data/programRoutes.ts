@@ -1,0 +1,18 @@
+export const programRoutes = {
+  reachTruckOperator: '/programs/reach-truck-operator',
+  forkliftOperator: '/programs/forklift-operator',
+  warehouseOperations: '/programs/warehouse-operations',
+  warehouseSupervisor: '/programs/warehouse-supervisor',
+  forkliftSafety: '/programs/forklift-safety',
+  reachTruckTraining: '/programs/reach-truck-training',
+  roadSafety: '/programs/road-safety',
+  safetyTraining: '/programs/safety-training',
+  softSkills: '/programs/soft-skills',
+  fiveS: '/programs/5s-training',
+  qualityTraining: '/programs/quality-training',
+  weldingTraining: '/programs/welding-training',
+  bbsTraining: '/programs/bbs-training',
+  kaizenTraining: '/programs/kaizen-training',
+  pokayokeTraining: '/programs/pokayoke-training',
+  poshTraining: '/programs/posh-training',
+};
