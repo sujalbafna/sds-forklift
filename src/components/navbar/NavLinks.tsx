@@ -36,7 +36,9 @@ const NavLinks = () => {
           </Link>
         ))}
         <div className="hidden lg:block">
+          <div className="inline-flex items-center px-2 lg:px-3 py-2 text-sm font-medium rounded-md transition-colors text-gray-600 hover:text-blue-600 hover:bg-gray-50">
             <GoogleTranslateButton />
+          </div>
         </div>
       </div>
       <div className="md:hidden flex items-center">
@@ -68,7 +70,7 @@ const NavLinks = () => {
                 <span className="ml-3">{item.name}</span>
               </Link>
             ))}
-            <div className="px-3 py-2">
+            <div className="flex items-center px-3 py-2 text-base font-medium rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-50">
                 <GoogleTranslateButton />
             </div>
           </div>

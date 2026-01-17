@@ -8,55 +8,52 @@ declare global {
 }
 
 const GoogleTranslate: React.FC = () => {
-  useEffect(() => {
+  const initGoogleTranslate = () => {
     try {
-      // Dynamically load the Google Translate script
+      if (window.google && window.google.translate) {
+        const options: TranslateElementOptions = {
+          pageLanguage: translateConfig.options.pageLanguage,
+          includedLanguages: translateConfig.options.includedLanguages,
+          layout: window.google.translate.TranslateElement.InlineLayout[
+            translateConfig.options.layout as keyof typeof window.google.translate.TranslateElement.InlineLayout
+          ]
+        };
+
+        new window.google.translate.TranslateElement(
+          options,
+          'google_element'
+        );
+      }
+    } catch (error) {
+      console.error('Error initializing Google Translate:', error);
+    }
+  };
+
+  useEffect(() => {
+    const scriptId = 'google-translate-script';
+    const existingScript = document.getElementById(scriptId);
+
+    if (!existingScript) {
       const script = document.createElement('script');
+      script.id = scriptId;
       script.src = `${translateConfig.scriptUrl}?cb=loadGoogleTranslate`;
       script.async = true;
-      
-      // Handle script load error
       script.onerror = () => {
         console.error('Failed to load Google Translate script');
       };
-
-      // Define the global callback function
+      
       window.loadGoogleTranslate = () => {
-        try {
-          const options: TranslateElementOptions = {
-            pageLanguage: translateConfig.options.pageLanguage,
-            includedLanguages: translateConfig.options.includedLanguages,
-            layout: window.google.translate.TranslateElement.InlineLayout[
-              translateConfig.options.layout as keyof typeof window.google.translate.TranslateElement.InlineLayout
-            ]
-          };
-
-          new window.google.translate.TranslateElement(
-            options,
-            'google_element'
-          );
-        } catch (error) {
-          console.error('Error initializing Google Translate:', error);
-        }
+        initGoogleTranslate();
       };
-
+      
       document.body.appendChild(script);
-
-      // Cleanup
-      return () => {
-        if (script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
-        delete window.loadGoogleTranslate;
-      };
-    } catch (error) {
-      console.error('Error setting up Google Translate:', error);
+    } else if (window.google) {
+      initGoogleTranslate();
     }
+
   }, []);
 
-  return (
-    <div id="google_element" />
-  );
+  return null;
 };
 
 export default GoogleTranslate;
