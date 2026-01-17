@@ -1425,6 +1425,10 @@ video {
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
 }
+.group:hover .group-hover\:hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
 @media (min-width: 640px) {
 
   .sm\:col-span-2 {

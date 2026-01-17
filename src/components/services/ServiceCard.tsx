@@ -23,9 +23,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Ico
       </div>
       {route && (
         <div className="p-4 pt-0 mt-auto">
-          <Link 
+          <Link
             href={route}
-            className="block w-full text-center px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-blue-50 transition-colors group-hover:bg-white/90 group-hover:text-blue-600 font-medium"
+            className="block w-full text-center px-4 py-2 bg-blue-600 text-white rounded-md font-medium transition-colors hover:bg-blue-700 group-hover:bg-white group-hover:text-blue-600 group-hover:hover:bg-gray-100"
           >
             Know More <ArrowRight className="w-4 h-4 ml-1 inline-block" />
           </Link>
