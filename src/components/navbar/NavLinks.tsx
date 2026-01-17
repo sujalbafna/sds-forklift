@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { HardHat, Users, BookOpen, GraduationCap, Building2, PhoneCall } from 'lucide-react';
+import { HardHat, Users, BookOpen, GraduationCap, Building2, PhoneCall, Menu, X } from 'lucide-react';
 import GoogleTranslateButton from './GoogleTranslateButton';
 
 export const navItems = [
@@ -16,15 +16,16 @@ export const navItems = [
 
 const NavLinks = () => {
   const pathname = usePathname();
-  
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex items-center">
-      <div className="flex items-center space-x-4">
+    <>
+      <div className="hidden md:flex items-center space-x-1 lg:space-x-4">
         {navItems.map((item) => (
           <Link
             key={item.name}
             href={item.path}
-            className={`inline-flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors
+            className={`inline-flex items-center px-2 lg:px-3 py-2 text-sm font-medium rounded-md transition-colors
               ${pathname === item.path 
                 ? 'text-blue-600 bg-blue-50' 
                 : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
@@ -34,9 +35,46 @@ const NavLinks = () => {
             <span className="ml-2">{item.name}</span>
           </Link>
         ))}
+        <div className="hidden lg:block">
+            <GoogleTranslateButton />
+        </div>
       </div>
-      <GoogleTranslateButton />
-    </div>
+      <div className="md:hidden flex items-center">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+          aria-expanded="false"
+        >
+          <span className="sr-only">Open main menu</span>
+          {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="md:hidden absolute top-16 inset-x-0 bg-white shadow-lg z-40">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`flex items-center px-3 py-2 text-base font-medium rounded-md transition-colors
+                  ${pathname === item.path
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                  }`}
+              >
+                {item.icon}
+                <span className="ml-3">{item.name}</span>
+              </Link>
+            ))}
+            <div className="px-3 py-2">
+                <GoogleTranslateButton />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

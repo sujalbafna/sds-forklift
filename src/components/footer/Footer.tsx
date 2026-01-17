@@ -8,9 +8,9 @@ import { companyLinks, servicesLinks } from './footerData';
 const Footer = () => {
   return (
     <footer className="bg-gray-900">
-      <div className="w-[1200px] mx-auto px-4 py-12">
-        <div className="grid grid-cols-5 gap-8">
-          <div className="col-span-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center mb-4">
               <HardHat className="h-8 w-8 text-blue-500" />
               <span className="ml-2 text-xl font-bold text-white">SDS Forklift Training</span>
@@ -23,9 +23,16 @@ const Footer = () => {
             <FooterSocial />
           </div>
 
-          <FooterLinks title="Company" links={companyLinks} />
-          <FooterLinks title="Services" links={servicesLinks} />
-          <FooterContact />
+          <div>
+            <FooterLinks title="Company" links={companyLinks} />
+            <div className="mt-8">
+              <FooterLinks title="Services" links={servicesLinks} />
+            </div>
+          </div>
+          
+          <div>
+            <FooterContact />
+          </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8">

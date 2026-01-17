@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect } from 'react';
 import { translateConfig } from './config/translateConfig';
 import type { GoogleTranslateWindow, TranslateElementOptions } from './types/googleTranslate';
@@ -54,11 +55,7 @@ const GoogleTranslate: React.FC = () => {
   }, []);
 
   return (
-    <div 
-      id="google_element"
-      className="fixed top-4 right-4 z-50 hidden md:block"
-      style={{ minWidth: '120px' }}
-    />
+    <div id="google_element" />
   );
 };
 

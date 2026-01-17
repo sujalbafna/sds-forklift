@@ -43,15 +43,15 @@ export default function Contact() {
 
 
   return (
-    <div id="contact" className="py-20 bg-gray-50">
+    <div id="contact" className="py-12 md:py-20 bg-gray-50 pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
-          <p className="text-xl text-gray-600">Get in touch with us for all your facility management needs</p>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Contact Us</h2>
+          <p className="text-lg md:text-xl text-gray-600">Get in touch with us for all your facility management needs</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
@@ -109,7 +109,7 @@ export default function Contact() {
 
           <div className="space-y-8">
             <div className="flex items-start space-x-4">
-              <MapPin className="w-6 h-6 text-blue-800 mt-1" />
+              <MapPin className="w-6 h-6 text-blue-800 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Our Location</h3>
                 <p className="text-gray-600">Gate number-424, Opposite Bhagirathi Mangal Office,  Dehu Phata Near Nexus Furniture Stay Post Yalwadi, Taluka Village ,District Pune</p>
